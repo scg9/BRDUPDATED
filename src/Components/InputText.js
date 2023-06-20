@@ -29,21 +29,12 @@ const InputText = () => {
       setLeftText("Please generate BRD first");
       return;
     }
-    // setShowbrdsuccess(false);
     const element = document.createElement("a");
     const file = new Blob([responseData], { type: "application/msword" });
     element.href = URL.createObjectURL(file);
     element.download = "downloadFile.doc";
     element.click();
   };
-
-  // const PreviewBrd = () => {
-  //   if (!isBrdGenerated) {
-  //     setRightText("Please generate BRD first");
-  //     return;
-  //   }
-  //   setPreviewvalue(responseData);
-  // };
 
   const handleInputchange = (e) => {
     setInputValue(e.target.value);
@@ -153,8 +144,6 @@ const InputText = () => {
             ></textarea>
             <div className="downloadbtn">
               <button onClick={postdata}>Generate Brd</button>
-
-              {/* <button onClick={DownloadBrd}>Download Brd</button> */}
             </div>
           </div>
           <p className="errors" id="left">
@@ -168,7 +157,6 @@ const InputText = () => {
               disabled
               value={previewvalue}
             ></textarea>
-            {/* <button onClick={PreviewBrd}>Preview Brd</button> */}
             {isBrdGenerated && (
               <button onClick={DownloadBrd}>Download Brd</button>
             )}
