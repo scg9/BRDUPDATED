@@ -1,21 +1,21 @@
 import "./App.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./Pages/HomePage";
+import Header from "./Components/Header"
 
-const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <HomePage />,
-    },
-  ],
-  {
-    basename: "/brd-automate" || "/",
-  }
-);
+import InputText from "./Components/InputText"
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+
+    <>
+
+    <Header />
+
+    <InputText />
+
+    </>
+
+  )
+
 }
 
 export default App;
